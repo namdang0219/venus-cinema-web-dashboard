@@ -21,5 +21,13 @@ body {
 } */
 
 body {
-	background-color: #efeff1;
+	@apply bg-mainBg
+}
+
+.scrollbar-hidden {
+-ms-overflow-style: none;
+scrollbar-width: none;
+}
+.scrollbar-hidden::-webkit-scrollbar {
+ display: none;
 }
