@@ -10,7 +10,7 @@ const AppLayout: FC<PropsWithChildren> = ({ children }) => {
 	return (
 		<div className="h-screen relative">
 			{/* navigation  */}
-			<div className="p-4 h-screen w-[250px] border-r border-r-borderGray fixed left-0 top-0">
+			<div className="p-4 h-screen w-[250px] border-r border-r-borderGray fixed left-0 top-0 bg-white">
 				{/* logo  */}
 				<h1 className="font-semibold text-2xl mb-4">
 					<span className="text-primary">Venus</span>Cinema
@@ -39,7 +39,7 @@ const AppLayout: FC<PropsWithChildren> = ({ children }) => {
 			{/* main  */}
 			<div className="ml-[250px]">
 				{/* topbar  */}
-				<div className="h-[72px] flex items-center justify-between z-10 px-4 sticky top-0 left-0 bg-mainBg border-b border-b-borderGray">
+				<div className="h-[72px] flex items-center justify-between z-10 px-4 sticky top-0 left-0 bg-white border-b border-b-borderGray">
 					<h2 className="text-2xl font-semibold">映画管理</h2>
 					<div className="flex items-center gap-2">
 						<div className="flex flex-col items-end">
@@ -82,6 +82,10 @@ const navigations: {
 	{
 		label: "ユーザー",
 		href: "/users",
+	},
+	{
+		label: "拡張",
+		href: "/extends",
 	},
 ];
 

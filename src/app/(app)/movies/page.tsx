@@ -14,6 +14,9 @@ import {
 	Select,
 } from "antd";
 import { HiXMark } from "react-icons/hi2";
+import { categoryMocks } from "@/mock/categoryMocks";
+import { languageMocks } from "@/mock/languageMocks";
+import { formatMocks } from "@/mock/formatMocks";
 
 const { Search } = Input;
 
@@ -254,7 +257,7 @@ const MoviesScreen = () => {
 							>
 								{/* title  */}
 								<Form.Item label="タイトル">
-									<Input placeholder="タイトルを入力してください"/>
+									<Input placeholder="タイトルを入力してください" />
 								</Form.Item>
 
 								{/* desc  */}
@@ -264,7 +267,10 @@ const MoviesScreen = () => {
 
 								{/* status  */}
 								<Form.Item label="状態">
-									<Select defaultActiveFirstOption placeholder='状態を選択してください'>
+									<Select
+										defaultActiveFirstOption
+										placeholder="状態を選択してください"
+									>
 										<Select.Option value="onBoarding">
 											上映中
 										</Select.Option>
@@ -279,9 +285,12 @@ const MoviesScreen = () => {
 
 								{/* language  */}
 								<Form.Item label="言語">
-									<Select defaultActiveFirstOption placeholder='言語を選択してください'>
-										{languages.length > 0 &&
-											languages.map((l) => (
+									<Select
+										defaultActiveFirstOption
+										placeholder="言語を選択してください"
+									>
+										{languageMocks.length > 0 &&
+											languageMocks.map((l) => (
 												<Fragment key={l.languageId}>
 													<Select.Option
 														value={l.languageId}
@@ -295,9 +304,12 @@ const MoviesScreen = () => {
 
 								{/* theater type  */}
 								<Form.Item label="上映形式">
-									<Select defaultActiveFirstOption placeholder='上映形式を選択してください'>
-										{formats.length > 0 &&
-											formats.map((f) => (
+									<Select
+										defaultActiveFirstOption
+										placeholder="上映形式を選択してください"
+									>
+										{formatMocks.length > 0 &&
+											formatMocks.map((f) => (
 												<Fragment key={f.formatId}>
 													<Select.Option
 														value={f.formatId}
@@ -316,7 +328,10 @@ const MoviesScreen = () => {
 
 								{/* R labels  */}
 								<Form.Item label="年齢指定">
-									<Select defaultActiveFirstOption placeholder='Rラベルを選択してください'>
+									<Select
+										defaultActiveFirstOption
+										placeholder="Rラベルを選択してください"
+									>
 										{rLabels.length > 0 &&
 											rLabels.map((r) => (
 												<Fragment key={r.rRabelId}>
@@ -352,8 +367,8 @@ const MoviesScreen = () => {
 										mode="multiple"
 										placeholder="カテゴリーを選択してください"
 									>
-										{categories.length > 0 &&
-											categories.map((c) => (
+										{categoryMocks.length > 0 &&
+											categoryMocks.map((c) => (
 												<Fragment key={c.categoryId}>
 													<Select.Option
 														value={c.categoryId}
@@ -372,44 +387,6 @@ const MoviesScreen = () => {
 		</div>
 	);
 };
-
-const categories: {
-	categoryId: string;
-	name: string;
-}[] = [
-	{ categoryId: "1", name: "アニメーション" },
-	{ categoryId: "2", name: "コメディー" },
-	{ categoryId: "3", name: "フンタジー" },
-	{ categoryId: "4", name: "ホラー" },
-	{ categoryId: "5", name: "SF/フンタジー" },
-	{ categoryId: "6", name: "アクション" },
-	{ categoryId: "8", name: "ドキュメンタリー" },
-	{ categoryId: "9", name: "ミュージカル" },
-	{ categoryId: "10", name: "サスペンス" },
-];
-
-const formats: {
-	formatId: string;
-	name: string;
-}[] = [
-	{ formatId: "1", name: "2D" },
-	{ formatId: "2", name: "3D" },
-	{ formatId: "3", name: "IMAX" },
-];
-
-const languages: {
-	languageId: string;
-	name: string;
-}[] = [
-	{ languageId: "1", name: "日本語" },
-	{ languageId: "2", name: "英語" },
-	{ languageId: "4", name: "中国語" },
-	{ languageId: "5", name: "ドイツ語" },
-	{ languageId: "6", name: "フランス語" },
-	{ languageId: "7", name: "アラビア語" },
-	{ languageId: "8", name: "インドネシア語" },
-	{ languageId: "10", name: "ノルウェージ語" },
-];
 
 const rLabels: {
 	rRabelId: string;
