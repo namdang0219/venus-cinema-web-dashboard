@@ -158,6 +158,17 @@ const MoviesScreen = () => {
 											<p className="text-gray-400 text-sm mt-1">
 												追加日： 2025/01/14
 											</p>
+											<div className="mt-2">
+												{["action", "horor"].map(
+													(item) => (
+														<Fragment key={item}>
+															<div className="text-xs inline-block bg-gray-100 px-2 py-1 rounded-sm text-gray-500 mr-1">
+																{item}
+															</div>
+														</Fragment>
+													)
+												)}
+											</div>
 										</div>
 									</div>
 								</Fragment>

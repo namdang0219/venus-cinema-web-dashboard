@@ -25,7 +25,7 @@ const AppLayout: FC<PropsWithChildren> = ({ children }) => {
 									className={`h-12 font-semibold flex items-center px-3.5 ${
 										pathname === item.href
 											? "bg-primary rounded-lg text-white"
-											: ""
+											: "hover:bg-slate-100"
 									}`}
 								>
 									<p>{item.label}</p>
